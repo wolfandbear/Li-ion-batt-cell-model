@@ -32,8 +32,12 @@ between pulses, logged with time, voltage, current, capacity, energy and tempera
 
 ![Voltage vs capacity](images/voltage_vs_capacity.png)
 
+![Rested OCV, discharged capacity and SoC at each rest point](images/ocv_soc.png)
+
 ### 2. DC internal resistance (DCIR)
-DCIR = ΔV / ΔI at 10 s, 30 s, 60 s … after pulse onset:
+DCIR = ΔV / ΔI at 10 s, 30 s, 60 s … after pulse onset of each 30-min, 9 A discharge pulse:
+
+![Single pulse and relaxation](images/pulse_relaxation.png)
 
 | SoC | DCIR 10 s | DCIR 30 s |
 |---|---|---|
@@ -51,7 +55,8 @@ R0 is fixed from the 10 s DCIR; the polarisation amplitudes (A = I·R) and time 
 fitted with `scipy.optimize.curve_fit` on each 30-minute pulse, and R, C are back-calculated
 (τ = R·C).
 
-![2-RC fit at 95% SoC](images/fit_95soc.png)
+![2-RC fits at 95%, 80% and 75% SoC](images/fits_by_soc.png)
+*Left to right: 95 %, 80 %, 75 % SoC*
 
 | SoC | R0 (mΩ) | R1 (mΩ) | τ1 (s) | R2 (mΩ) | τ2 (s) |
 |---|---|---|---|---|---|
@@ -64,7 +69,10 @@ and a slow process (τ2 ≈ 100–600 s, diffusion) that grows as SoC decreases.
 
 ### 4. Simulation & validation
 The RC-branch ODE `dV_k/dt = (I·R_k − V_k)/τ_k` is integrated with forward Euler and
-driven by the measured current of a separate validation profile (multi-level pulses up to ±45 A).
+driven by the measured current of a separate validation profile: 5-minute discharge/charge pulses at
+9, 18 and 45 A (C/10, C/5, C/2) separated by rests, starting at ~95 % SoC.
+
+![Validation current profile](images/validation_profile.png)
 
 - **RMSE 23.6 mV, MAE 14.8 mV** over the full profile
 - Excellent agreement at the low-amplitude pulses; error concentrates in the high-current pulses,
