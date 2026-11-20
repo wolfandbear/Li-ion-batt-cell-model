@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="640" height="240" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <rect width="640" height="240" fill="#ffffff"/>
+  <g stroke="#222" stroke-width="2" fill="none">
+    <!-- OCV source (left vertical) -->
+    <line x1="50" y1="200" x2="50" y2="138"/>
+    <line x1="34" y1="126" x2="66" y2="126"/>
+    <line x1="42" y1="138" x2="58" y2="138"/>
+    <line x1="50" y1="126" x2="50" y2="70"/>
+    <!-- top wire to R0 -->
+    <line x1="50" y1="70" x2="100" y2="70"/>
+    <!-- R0 -->
+    <rect x="100" y="60" width="60" height="20"/>
+    <line x1="160" y1="70" x2="200" y2="70"/>
+    <!-- RC1 block: nodes at x=200 and x=340 -->
+    <line x1="200" y1="40" x2="200" y2="110"/>
+    <line x1="340" y1="40" x2="340" y2="110"/>
+    <line x1="200" y1="40" x2="240" y2="40"/>
+    <rect x="240" y="30" width="60" height="20"/>
+    <line x1="300" y1="40" x2="340" y2="40"/>
+    <line x1="200" y1="110" x2="264" y2="110"/>
+    <line x1="264" y1="96" x2="264" y2="124"/>
+    <line x1="276" y1="96" x2="276" y2="124"/>
+    <line x1="276" y1="110" x2="340" y2="110"/>
+    <line x1="340" y1="70" x2="380" y2="70"/>
+    <!-- RC2 block: nodes at x=380 and x=520 -->
+    <line x1="380" y1="40" x2="380" y2="110"/>
+    <line x1="520" y1="40" x2="520" y2="110"/>
+    <line x1="380" y1="40" x2="420" y2="40"/>
+    <rect x="420" y="30" width="60" height="20"/>
+    <line x1="480" y1="40" x2="520" y2="40"/>
+    <line x1="380" y1="110" x2="444" y2="110"/>
+    <line x1="444" y1="96" x2="444" y2="124"/>
+    <line x1="456" y1="96" x2="456" y2="124"/>
+    <line x1="456" y1="110" x2="520" y2="110"/>
+    <!-- output -->
+    <line x1="520" y1="70" x2="590" y2="70"/>
+    <line x1="50" y1="200" x2="590" y2="200"/>
+  </g>
+  <circle cx="590" cy="70" r="4" fill="#fff" stroke="#222" stroke-width="2"/>
+  <circle cx="590" cy="200" r="4" fill="#fff" stroke="#222" stroke-width="2"/>
+  <g fill="#222">
+    <text x="70" y="122">+</text>
+    <text x="72" y="160">OCV(SoC)</text>
+    <text x="130" y="100" text-anchor="middle">R0</text>
+    <text x="270" y="24" text-anchor="middle">R1</text>
+    <text x="270" y="145" text-anchor="middle">C1</text>
+    <text x="450" y="24" text-anchor="middle">R2</text>
+    <text x="450" y="145" text-anchor="middle">C2</text>
+    <text x="270" y="175" text-anchor="middle" font-size="13" fill="#555">fast: τ1 = R1·C1</text>
+    <text x="450" y="175" text-anchor="middle" font-size="13" fill="#555">slow: τ2 = R2·C2</text>
+    <text x="604" y="140">V</text>
+    <text x="604" y="80" font-size="13">+</text>
+    <text x="604" y="205" font-size="13">−</text>
+  </g>
+</svg>

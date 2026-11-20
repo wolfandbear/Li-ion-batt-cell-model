@@ -47,6 +47,8 @@ DCIR = ΔV / ΔI at 10 s, 30 s, 60 s … after pulse onset of each 30-min, 9 A d
 
 ### 3. 2-RC model identification
 
+![2-RC equivalent circuit](images/2rc_circuit.svg)
+
 ```
 V(t) = OCV − I·R0 − I·R1·(1 − e^(−t/τ1)) − I·R2·(1 − e^(−t/τ2))
 ```
@@ -87,12 +89,14 @@ driven by the measured current of a separate validation profile: 5-minute discha
 - **Estimation**: the identified model is a natural basis for an EKF/UKF SoC estimator.
 
 ## Repository
-- `notebook__.ipynb`: full analysis (exploration → DCIR → fitting → validation)
-- `images/`: figures used in this README
+This repository contains the write-up and figures. The analysis notebook (Python: pandas, NumPy,
+SciPy, Matplotlib) and the raw test data are not published. The data is proprietary; the code is
+available on request.
 
-The raw test data is proprietary and cannot be shared, so the notebook will not run as-is.
-It expects tab-separated files `_data/characterisation_1.txt` and `_data/validation_profile.txt` with columns
-`time_s, voltage_V, I_mA, Capacity_mAh, dq_mAh, Energy_Wh, Temperature_degC, Ns`.
-The saved notebook outputs show all results.
-
-**Tools:** Python, pandas, NumPy, SciPy, Matplotlib, scikit-learn (metrics)
+## References
+2-RC model formulation and comparable parameter sets:
+- doi:[10.1109/PEDES56012.2022.10079988](https://doi.org/10.1109/PEDES56012.2022.10079988)
+- doi:[10.1109/ACCESS.2022.3148528](https://doi.org/10.1109/ACCESS.2022.3148528)
+- doi:[10.20944/preprints202101.0223.v1](https://doi.org/10.20944/preprints202101.0223.v1)
+- doi:[10.1016/j.jpowsour.2020.229117](https://doi.org/10.1016/j.jpowsour.2020.229117) (3-RC parameters for a 90 Ah LFP cell)
+- [abhy-kumar/battery-modelling-project](https://github.com/abhy-kumar/battery-modelling-project), [TUMFTM/2RC_ECM](https://github.com/TUMFTM/2RC_ECM), [NREL/thevenin](https://github.com/NREL/thevenin)
