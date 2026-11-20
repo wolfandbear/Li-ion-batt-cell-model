@@ -4,6 +4,8 @@ Characterisation of a ~89 Ah LiFePO₄ (LFP) cell from lab cycling data, identif
 **second-order (2-RC) equivalent-circuit model** by nonlinear least-squares fitting, and
 validation of the model against an independent dynamic current profile.
 
+*Completed as a technical assessment for a battery engineering role; results were presented to the interview panel.*
+
 ![Validation: simulated vs measured voltage](images/validation.png)
 
 ## Summary
